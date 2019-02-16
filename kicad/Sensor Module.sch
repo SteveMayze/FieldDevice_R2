@@ -1,5 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:FieldDevice_R2-cache
+LIBS:FieldDevice_Power_5V-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268

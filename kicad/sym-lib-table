@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name FieldDevice_Power_5V-rescue)(type Legacy)(uri ${KIPROJECT}/FieldDevice_Power_5V-rescue.lib)(options "")(descr ""))
+  (lib (name FieldDevice_R2)(type Legacy)(uri D:/pcbs/Leawood/FieldDevice_R2/kicad/FieldDevice_R2.lib)(options "")(descr ""))
+)
