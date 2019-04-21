@@ -1,11 +1,10 @@
 EESchema Schematic File Version 4
 LIBS:FieldDevice_R2-cache
-LIBS:FieldDevice_Power_5V-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 8 8
+Sheet 8 9
 Title ""
 Date ""
 Rev ""
@@ -46,11 +45,11 @@ Vbb
 Wire Wire Line
 	4800 2950 3750 2950
 Wire Wire Line
-	5600 2950 6400 2950
+	5600 2950 6050 2950
 Text HLabel 3750 2950 0    50   Input ~ 0
 SPI_ADDR
 Text HLabel 6400 2950 2    50   Input ~ 0
-~SS_DISPLAY
+~SS_1
 NoConn ~ 5600 3850
 NoConn ~ 5600 3650
 NoConn ~ 5600 3550
@@ -76,8 +75,6 @@ Wire Wire Line
 	4800 3450 4000 3450
 Wire Wire Line
 	4000 3550 4000 3450
-Wire Wire Line
-	5200 4050 5200 4200
 $Comp
 L FieldDevice_Power_5V-rescue:GND #PWR?
 U 1 1 5C6B68ED
@@ -105,12 +102,31 @@ Wire Wire Line
 Text Label 4500 3250 0    50   ~ 0
 Vbb
 Wire Wire Line
-	4800 3550 4600 3550
+	5200 4050 5200 4300
 Wire Wire Line
-	4600 3550 4600 4200
+	4800 3550 4450 3550
+Text HLabel 4450 3550 0    50   Input ~ 0
+~ENABLE
+$Comp
+L Device:R R?
+U 1 1 5CBC0839
+P 6050 2500
+F 0 "R?" H 6120 2546 50  0000 L CNN
+F 1 "R" H 6120 2455 50  0000 L CNN
+F 2 "" V 5980 2500 50  0001 C CNN
+F 3 "~" H 6050 2500 50  0001 C CNN
+	1    6050 2500
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	4600 4200 5200 4200
-Connection ~ 5200 4200
+	6050 2350 6050 2150
 Wire Wire Line
-	5200 4200 5200 4300
+	6050 2150 5750 2150
+Wire Wire Line
+	6050 2650 6050 2950
+Connection ~ 6050 2950
+Wire Wire Line
+	6050 2950 6400 2950
+Text Label 5750 2150 0    50   ~ 0
+Vbb
 $EndSCHEMATC

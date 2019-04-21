@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LED_Dual_AACC
+D Dual LED, cathodes on pins 3 and 4
+K LED diode bicolor dual
+F ~
+$ENDCMP
+#
+#End Doc Library

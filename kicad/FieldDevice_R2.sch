@@ -1,9 +1,8 @@
 EESchema Schematic File Version 4
 LIBS:FieldDevice_R2-cache
-LIBS:FieldDevice_Power_5V-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
-$Descr A4 11693 8268
+$Descr A3 16535 11693
 encoding utf-8
 Sheet 1 8
 Title "Leawood Field Device"
@@ -39,7 +38,7 @@ U 5C1FCC6F
 F0 "Temperature Sensor" 50
 F1 "TemperatureSensor.sch" 50
 F2 "O.S." I L 4200 2400 50 
-F3 "SCL_TEMP" I L 4200 2250 50 
+F3 "SCL" I L 4200 2250 50 
 F4 "SDA" I L 4200 2150 50 
 F5 "Vbb" I L 4200 1950 50 
 $EndSheet
@@ -59,26 +58,26 @@ F3 "Vbb" I L 1600 2050 50
 F4 "SDA" I R 2700 3400 50 
 F5 "SCL" I R 2700 3550 50 
 F6 "O.S." I R 2700 1950 50 
-F7 "SPI_ADDR" I R 2700 2900 50 
+F7 "~SS" I R 2700 2900 50 
 F8 "SCLK" I R 2700 2600 50 
 F9 "MOSI" I R 2700 2700 50 
 F10 "MISO" I R 2700 2800 50 
-F11 "SPI_ADDR_ENABLE" I R 2700 3000 50 
-F12 "SPI_ADDR_LATCH" I R 2700 3100 50 
+F11 "Rx" I L 1600 2350 50 
+F12 "Tx" I L 1600 2550 50 
 $EndSheet
 $Sheet
 S 1600 4550 1100 650 
 U 5C1FCC78
 F0 "ModemAdapter" 50
 F1 "MODELAdapter.sch" 50
-F2 "Vbb" I L 1600 4700 50 
+F2 "DataIn" I L 1600 4850 50 
+F3 "DataOut" I L 1600 5000 50 
+F4 "Vbb" I L 1600 4700 50 
 $EndSheet
-Text Notes 4350 3450 0    50   ~ 0
-Single input, 8 address lines \nout - Based on a shift register\nFF, FE, FD, FB, F7, EF, DF, BF, 7F
 Text Notes 4450 1300 0    50   ~ 0
 Serial number to identify \nthe Field Device\nI2C Address corresponds to \n1 0 1 0 0 0 0 [R/W]
-Text Notes 4500 2100 0    50   ~ 0
-On-board temperature \nsensor
+Text Notes 4700 2250 0    50   ~ 0
+On-board temperature \nsensor\nSlave address is \n1 0 0 1 A2 A1 A0
 Wire Wire Line
 	2600 1350 2850 1350
 Text Label 2850 1350 2    50   ~ 0
@@ -130,38 +129,19 @@ Wire Wire Line
 Text Label 1250 4700 0    50   ~ 0
 Vbb
 Wire Wire Line
-	4300 3550 4100 3550
-Text Label 4100 3550 0    50   ~ 0
-Vbb
-Wire Wire Line
 	4200 1250 4000 1250
 Wire Wire Line
 	4200 1350 4000 1350
 Text Label 3000 3550 2    50   ~ 0
 SCL
-$Sheet
-S 4300 3150 1500 1550
-U 5C1FCC69
-F0 "SPI Addressing" 50
-F1 "SPIAddressing.sch" 50
-F2 "Vbb" I L 4300 3550 50 
-F3 "SPI_ADDR" I L 4300 3900 50 
-F4 "~SS_DISPLAY" I R 5800 3750 50 
-F5 "LATCH" I L 4300 4100 50 
-F6 "~ENABLE" I L 4300 3700 50 
-$EndSheet
 Text Label 4000 1250 0    50   ~ 0
 SDA
 Text Label 4000 1350 0    50   ~ 0
 SCL
-Text Label 3900 3900 0    50   ~ 0
-SPI_ADDR
-Wire Wire Line
-	4300 3900 3900 3900
 Wire Wire Line
 	2700 2900 3100 2900
 Text Label 3100 2900 2    50   ~ 0
-SPI_ADDR
+~SS
 Wire Wire Line
 	2700 2800 3100 2800
 Wire Wire Line
@@ -174,20 +154,47 @@ Text Label 3100 2700 2    50   ~ 0
 MOSI
 Text Label 3100 2800 2    50   ~ 0
 MISO
-Text Label 3600 3700 0    50   ~ 0
-~SPI_ADDR_ENABLE
 Wire Wire Line
-	4300 3700 3600 3700
+	1600 1100 1300 1100
+Text Label 1300 1100 0    50   ~ 0
+Vin
 Wire Wire Line
-	2700 3000 3450 3000
-Text Label 3450 3000 2    50   ~ 0
-~SPI_ADDR_ENABLE
-Text Label 3650 4100 0    50   ~ 0
-SPI_ADDR_LATCH
+	1600 4850 1250 4850
 Wire Wire Line
-	4300 4100 3650 4100
-Text Label 3400 3100 2    50   ~ 0
-SPI_ADDR_LATCH
+	1600 5000 1250 5000
 Wire Wire Line
-	2700 3100 3400 3100
+	1600 2350 1300 2350
+Wire Wire Line
+	1600 2550 1300 2550
+Text Label 1300 2550 0    50   ~ 0
+Tx
+Text Label 1300 2350 0    50   ~ 0
+Rx
+Text Label 1250 5000 0    50   ~ 0
+Rx
+Text Label 1250 4850 0    50   ~ 0
+Tx
+Wire Wire Line
+	3750 4150 4150 4150
+Wire Wire Line
+	4150 4450 3750 4450
+Wire Wire Line
+	4150 4650 3750 4650
+Text Notes 4400 4000 0    50   ~ 0
+I2C \nSA0 -> GND: ADDR=0x78\nSA -> Vdd: ADDR=0x7A
+$Sheet
+S 4150 3600 1650 1550
+U 5CBF851C
+F0 "DisplayAdapter" 50
+F1 "DisplayAdapter.sch" 50
+F2 "SDA" I L 4150 4450 50 
+F3 "SCL" I L 4150 4650 50 
+F4 "Vbb" I L 4150 4150 50 
+$EndSheet
+Text Label 3750 4150 0    50   ~ 0
+Vbb
+Text Label 3750 4450 0    50   ~ 0
+SDA
+Text Label 3750 4650 0    50   ~ 0
+SCL
 $EndSCHEMATC

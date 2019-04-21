@@ -1,7 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:FieldDevice_R2-cache
-LIBS:FieldDevice_Power_5V-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -122,7 +121,7 @@ Wire Wire Line
 Text HLabel 4900 3450 0    50   Input ~ 0
 O.S.
 Text HLabel 4900 3200 0    50   Input ~ 0
-SCL_TEMP
+SCL
 Text HLabel 4900 3100 0    50   Input ~ 0
 SDA
 Wire Wire Line
