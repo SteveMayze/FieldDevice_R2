@@ -55,8 +55,8 @@ F0 "MCU Adapter" 50
 F1 "MCUAdapter.sch" 50
 F2 "Vcc" I L 1600 1950 50 
 F3 "Vbb" I L 1600 2050 50 
-F4 "SDA" I R 2700 3400 50 
-F5 "SCL" I R 2700 3550 50 
+F4 "SDA" I R 2700 3150 50 
+F5 "SCL" I R 2700 3300 50 
 F6 "O.S." I R 2700 1950 50 
 F7 "~SS" I R 2700 2900 50 
 F8 "SCLK" I R 2700 2600 50 
@@ -64,15 +64,17 @@ F9 "MOSI" I R 2700 2700 50
 F10 "MISO" I R 2700 2800 50 
 F11 "Rx" I L 1600 2350 50 
 F12 "Tx" I L 1600 2550 50 
+F13 "DISP_BACKLIGHT" I R 2700 3700 50 
+F14 "~DISP_RESET" I R 2700 3900 50 
 $EndSheet
 $Sheet
 S 1600 4550 1100 650 
 U 5C1FCC78
 F0 "ModemAdapter" 50
 F1 "MODELAdapter.sch" 50
-F2 "DataIn" I L 1600 4850 50 
-F3 "DataOut" I L 1600 5000 50 
-F4 "Vbb" I L 1600 4700 50 
+F2 "Vbb" I L 1600 4700 50 
+F3 "Rx" I L 1600 5000 50 
+F4 "Tx" I L 1600 4850 50 
 $EndSheet
 Text Notes 4450 1300 0    50   ~ 0
 Serial number to identify \nthe Field Device\nI2C Address corresponds to \n1 0 1 0 0 0 0 [R/W]
@@ -91,10 +93,10 @@ Wire Wire Line
 Text Label 4000 1950 0    50   ~ 0
 Vbb
 Wire Wire Line
-	2700 3550 3000 3550
+	2700 3300 3000 3300
 Wire Wire Line
-	2700 3400 3000 3400
-Text Label 3000 3400 2    50   ~ 0
+	2700 3150 3000 3150
+Text Label 3000 3150 2    50   ~ 0
 SDA
 Wire Wire Line
 	4200 2150 4000 2150
@@ -132,7 +134,7 @@ Wire Wire Line
 	4200 1250 4000 1250
 Wire Wire Line
 	4200 1350 4000 1350
-Text Label 3000 3550 2    50   ~ 0
+Text Label 3000 3300 2    50   ~ 0
 SCL
 Text Label 4000 1250 0    50   ~ 0
 SDA
@@ -175,26 +177,54 @@ Rx
 Text Label 1250 4850 0    50   ~ 0
 Tx
 Wire Wire Line
-	3750 4150 4150 4150
+	5550 3550 6250 3550
 Wire Wire Line
-	4150 4450 3750 4450
+	6250 3700 5550 3700
 Wire Wire Line
-	4150 4650 3750 4650
-Text Notes 4400 4000 0    50   ~ 0
-I2C \nSA0 -> GND: ADDR=0x78\nSA -> Vdd: ADDR=0x7A
+	6250 3900 5550 3900
+Text Notes 6700 3500 0    50   ~ 0
+I2C \nSA0 -> GND: ADDR=0x78 ***\nSA0 -> Vdd: ADDR=0x7A
 $Sheet
-S 4150 3600 1650 1550
+S 6250 3200 1650 1550
 U 5CBF851C
 F0 "DisplayAdapter" 50
 F1 "DisplayAdapter.sch" 50
-F2 "SDA" I L 4150 4450 50 
-F3 "SCL" I L 4150 4650 50 
-F4 "Vbb" I L 4150 4150 50 
+F2 "SDA" I L 6250 3700 50 
+F3 "SCL" I L 6250 3900 50 
+F4 "Vbb" I L 6250 3550 50 
+F5 "~RESET" I L 6250 4400 50 
+F6 "BACKLIGHT" I L 6250 4150 50 
 $EndSheet
-Text Label 3750 4150 0    50   ~ 0
+Text Label 5550 3550 0    50   ~ 0
 Vbb
-Text Label 3750 4450 0    50   ~ 0
+Text Label 5550 3700 0    50   ~ 0
 SDA
-Text Label 3750 4650 0    50   ~ 0
+Text Label 5550 3900 0    50   ~ 0
 SCL
+Wire Wire Line
+	6250 4150 5550 4150
+Wire Wire Line
+	6250 4400 5550 4400
+Text Label 5550 4150 0    50   ~ 0
+DISP_BACKLIGHT
+Text Label 5550 4400 0    50   ~ 0
+~DISP_RESET
+Text Notes 6500 4700 0    50   ~ 0
+EA DOGS104-A\nEA LED36X28-A Amber Backlight
+Wire Wire Line
+	2700 3700 3400 3700
+Wire Wire Line
+	2700 3900 3400 3900
+Text Label 3400 3700 2    50   ~ 0
+DISP_BACKLIGHT
+Text Label 3400 3900 2    50   ~ 0
+~DISP_RESET
+Text Notes 1900 2550 1    50   ~ 0
+USART
+Text Notes 2400 2750 1    50   ~ 0
+SPI
+Text Notes 2400 3300 1    50   ~ 0
+I2C
+Text Notes 1950 3950 1    50   ~ 0
+DISPLAY
 $EndSCHEMATC

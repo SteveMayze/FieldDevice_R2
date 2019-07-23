@@ -23,7 +23,9 @@ P 5250 3250
 F 0 "U?" H 5400 2850 50  0000 L CNN
 F 1 "DS28CM00" H 5050 3250 50  0000 L CNN
 F 2 "" H 5250 3250 50  0001 C CNN
-F 3 "" H 5250 3250 50  0001 C CNN
+F 3 "https://datasheets.maximintegrated.com/en/ds/DS28CM00.pdf" H 5250 3250 50  0001 C CNN
+F 4 "DS28CM00R-A00+T" H 5250 3250 50  0001 C CNN "MPN"
+F 5 "https://www.digikey.de/product-detail/de/maxim-integrated/DS28CM00R-A00-T/DS28CM00R-A00-TCT-ND/2699348" H 5250 3250 50  0001 C CNN "Link"
 	1    5250 3250
 	1    0    0    -1  
 $EndComp

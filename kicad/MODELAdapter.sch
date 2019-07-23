@@ -14,7 +14,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 4300 1350 0    50   Input ~ 0
+Text HLabel 5600 1350 0    50   Input ~ 0
 Vbb
 Text HLabel 4450 2350 0    50   Input ~ 0
 Rx
@@ -32,7 +32,7 @@ F 3 "" H 5450 2300 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4300 1350 6100 1350
+	5600 1350 6100 1350
 Wire Wire Line
 	6100 1350 6100 1450
 Wire Wire Line
@@ -107,9 +107,9 @@ P 3000 5900
 F 0 "D?" V 3099 5690 50  0000 R CNN
 F 1 "Tx/Rx" V 3008 5690 50  0000 R CNN
 F 2 "" H 2970 5900 50  0001 C CNN
-F 3 "https://cdn-reichelt.de/documents/datenblatt/A500/15-22SURSYGC-S530-A3-E2-TR8_ENG_TDS.pdf" H 2970 5900 50  0001 C CNN
-F 4 "EVL 15-22SURSYG" H 3000 5900 50  0001 C CNN "MPN"
-F 5 "https://www.reichelt.de/led-smd-1210-rot-gruen-54-mcd-120-evl-15-22sursyg-p232060.html?&trstct=pol_1" H 3000 5900 50  0001 C CNN "Link"
+F 3 "https://www.lumex.com/spec/SML-LX15IGC-RP-TR.pdf" H 2970 5900 50  0001 C CNN
+F 4 "SML-LX15IGC-RP-TR	" H 3000 5900 50  0001 C CNN "MPN"
+F 5 "https://www.digikey.de/product-detail/de/lumex-opto-components-inc/SML-LX15IGC-RP-TR/67-1655-6-ND/1754501" H 3000 5900 50  0001 C CNN "Link"
 	1    3000 5900
 	0    -1   -1   0   
 $EndComp
