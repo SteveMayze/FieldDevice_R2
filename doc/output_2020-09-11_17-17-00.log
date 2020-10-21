@@ -1,0 +1,60 @@
+„„READING: 1
+  Bus Voltage: raw: 0x3672, 13938, act: 6.968 V
+Shunt Voltage: raw: 0x0005, 5, act: 0.049 mV
+      Current: raw: 0x0007, 7, act: 0.700 mA
+        Power: raw: 0x0002, 2, act: 4.000 mW
+
+READING: 2
+  Bus Voltage: raw: 0x52BA, 21178, act: 10.588 V
+Shunt Voltage: raw: 0x4F40, 20288, act: 202.879 mV
+      Current: raw: 0x4ABD, 19133, act: 1913.300 mA
+        Power: raw: 0x27F1, 10225, act: 20450.000 mW
+
+READING: 3
+  Bus Voltage: raw: 0x5D1A, 23834, act: 11.916 V
+Shunt Voltage: raw: 0x5AE7, 23271, act: 232.709 mV
+      Current: raw: 0x4E59, 20057, act: 2005.699 mA
+        Power: raw: 0x2CD8, 11480, act: 22960.000 mW
+
+READING: 4
+  Bus Voltage: raw: 0x626A, 25194, act: 12.596 V
+Shunt Voltage: raw: 0x5CC9, 23753, act: 237.529 mV
+      Current: raw: 0x5699, 22169, act: 2216.899 mA
+        Power: raw: 0x2BA4, 11172, act: 22344.000 mW
+
+READING: 5
+  Bus Voltage: raw: 0x3672, 13938, act: 6.968 V
+Shunt Voltage: raw: 0x0005, 5, act: 0.049 mV
+      Current: raw: 0x0007, 7, act: 0.700 mA
+        Power: raw: 0x0002, 2, act: 4.000 mW
+
+READING: 6
+  Bus Voltage: raw: 0x3672, 13938, act: 6.968 V
+Shunt Voltage: raw: 0x0004, 4, act: 0.040 mV
+      Current: raw: 0x0005, 5, act: 0.500 mA
+        Power: raw: 0x0002, 2, act: 4.000 mW
+
+READING: 7
+  Bus Voltage: raw: 0x3672, 13938, act: 6.968 V
+Shunt Voltage: raw: 0x0005, 5, act: 0.049 mV
+      Current: raw: 0x0004, 4, act: 0.400 mA
+        Power: raw: 0x0002, 2, act: 4.000 mW
+
+READING: 8
+  Bus Voltage: raw: 0x3672, 13938, act: 6.968 V
+Shunt Voltage: raw: 0x0004, 4, act: 0.040 mV
+      Current: raw: 0x0004, 4, act: 0.400 mA
+        Power: raw: 0x0002, 2, act: 4.000 mW
+
+READING: 9
+  Bus Voltage: raw: 0x3672, 13938, act: 6.968 V
+Shunt Voltage: raw: 0x0007, 7, act: 0.070 mV
+      Current: raw: 0x0005, 5, act: 0.500 mA
+        Power: raw: 0x0002, 2, act: 4.000 mW
+
+READING: 10
+  Bus Voltage: raw: 0x3672, 13938, act: 6.968 V
+Shunt Voltage: raw: 0x0004, 4, act: 0.040 mV
+      Current: raw: 0x0006, 6, act: 0.600 mA
+        Power: raw: 0x0002, 2, act: 4.000 mW
+

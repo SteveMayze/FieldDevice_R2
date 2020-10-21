@@ -3,6 +3,12 @@
 	[
 		{
 			"path": "D:\\pcbs\\Leawood\\Leawood-MW"
+		},
+		{
+			"path": "D:\\python\\python-tdd-book"
+		},
+		{
+			"path": "D:\\pcbs\\Leawood\\Leawood-Django"
 		}
 	]
 }

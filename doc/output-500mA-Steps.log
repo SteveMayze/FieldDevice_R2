@@ -1,0 +1,20 @@
+
+READINGS  Bus Voltage: raw: 0x367A, act: 6.972 
+VShunt Voltage: raw: 0x0007, act: 0.070 mV      
+Current: raw: 0x0004, act: 0.400 mA        
+Power: raw: 0x0002, act: 4.000 mW
+
+READINGS  Bus Voltage: raw: 0x33C2, act: 6.624 
+VShunt Voltage: raw: 0x13D9, act: 50.809 mV      
+Current: raw: 0x143D, act: 518.099 mA        
+Power: raw: 0x06AB, act: 3414.000 mW
+
+READINGS  Bus Voltage: raw: 0x32FA, act: 6.524 
+VShunt Voltage: raw: 0x2774, act: 101.000 mV      
+Current: raw: 0x26D4, act: 994.000 mA        
+Power: raw: 0x0C94, act: 6440.000 mW
+
+READINGS  Bus Voltage: raw: 0x4522, act: 8.848 
+VShunt Voltage: raw: 0x5591, act: 219.049 mV      
+Current: raw: 0x5069, act: 2058.500 mA        
+Power: raw: 0x22F2, act: 17892.000 mW

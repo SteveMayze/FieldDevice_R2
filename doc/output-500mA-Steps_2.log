@@ -1,0 +1,24 @@
+ÿREADING: 1
+  Bus Voltage: raw: 0x3672, 13938, act: 6.968 V
+Shunt Voltage: raw: 0x0004, 4, act: 0.040 mV
+      Current: raw: 0x0003, 3, act: 0.300 mA
+        Power: raw: 0x0002, 2, act: 4.000 mW
+
+READING: 2
+  Bus Voltage: raw: 0x33B2, 13234, act: 6.616 V
+Shunt Voltage: raw: 0x136C, 4972, act: 49.719 mV
+      Current: raw: 0x135E, 4958, act: 495.799 mA
+        Power: raw: 0x0689, 1673, act: 3346.000 mW
+
+READING: 3
+  Bus Voltage: raw: 0x34B2, 13490, act: 6.744 V
+Shunt Voltage: raw: 0x2831, 10289, act: 102.889 mV
+      Current: raw: 0x27B9, 10169, act: 1016.900 mA
+        Power: raw: 0x0D22, 3362, act: 6724.000 mW
+
+READING: 4
+  Bus Voltage: raw: 0x4EDA, 20186, act: 10.092 V
+Shunt Voltage: raw: 0x4E59, 20057, act: 200.569 mV
+      Current: raw: 0x4A1F, 18975, act: 1897.500 mA
+        Power: raw: 0x222D, 8749, act: 17498.000 mW
+

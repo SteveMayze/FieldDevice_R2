@@ -72,11 +72,7 @@ Vbb
 Wire Wire Line
 	2150 4150 2600 4150
 Wire Wire Line
-	2600 4150 2600 4350
-Wire Wire Line
 	2600 4150 3800 4150
-Wire Wire Line
-	3800 4150 3800 4350
 Connection ~ 2600 4150
 $Comp
 L Device:R R?
@@ -146,57 +142,61 @@ Wire Wire Line
 Wire Wire Line
 	3100 5495 3100 5350
 Wire Wire Line
-	3500 4650 3400 4650
-Wire Wire Line
-	2300 4650 2150 4650
-Text HLabel 2150 4650 0    50   Input ~ 0
+	2300 4600 2150 4600
+Text HLabel 2150 4600 0    50   Input ~ 0
 DataOut
-Text HLabel 3400 4650 0    50   Input ~ 0
+Text HLabel 3350 4600 0    50   Input ~ 0
 DataIn
-$Comp
-L FieldDevice_R2:Q_DUAL_NMOS_G2D78S1G4D56S3 Q?
-U 1 1 5CBC91E5
-P 2500 4650
-F 0 "Q?" H 2706 4675 50  0000 L CNN
-F 1 "Q_DUAL_NMOS_G2D78S1G4D56S3" H 2706 4630 50  0001 L CNN
-F 2 "" H 2700 4650 50  0001 C CNN
-F 3 "https://cdn-reichelt.de/documents/datenblatt/A200/TSM9926DCS.pdf" H 2700 4650 50  0001 C CNN
-F 4 "TSM9926DCS " H 2500 4650 50  0001 C CNN "MPN"
-F 5 "https://www.reichelt.de/mosfet-2xn-ch-20v-6a-0-03r-so8-tsm9926dcs-p254992.html?&trstct=pol_0" H 2500 4650 50  0001 C CNN "Link"
-	1    2500 4650
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	2600 4850 2600 4950
+	2600 4850 2600 4900
 Wire Wire Line
-	2500 4400 2500 4350
-Wire Wire Line
-	2500 4350 2600 4350
-Connection ~ 2600 4350
-Wire Wire Line
-	2600 4350 2600 4400
-$Comp
-L FieldDevice_R2:Q_DUAL_NMOS_G2D78S1G4D56S3 Q?
-U 2 1 5CBCC7E8
-P 3700 4650
-F 0 "Q?" H 3906 4675 50  0000 L CNN
-F 1 "Q_DUAL_NMOS_G2D78S1G4D56S3" H 3906 4630 50  0001 L CNN
-F 2 "" H 3900 4650 50  0001 C CNN
-F 3 "https://cdn-reichelt.de/documents/datenblatt/A200/TSM9926DCS.pdf" H 3900 4650 50  0001 C CNN
-F 4 "TSM9926DCS " H 3700 4650 50  0001 C CNN "MPN"
-F 5 "https://www.reichelt.de/mosfet-2xn-ch-20v-6a-0-03r-so8-tsm9926dcs-p254992.html?&trstct=pol_0" H 3700 4650 50  0001 C CNN "Link"
-	2    3700 4650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3700 4400 3700 4350
-Wire Wire Line
-	3700 4350 3800 4350
-Connection ~ 3800 4350
-Wire Wire Line
-	3800 4350 3800 4400
-Wire Wire Line
-	3800 4850 3800 4950
+	3800 4850 3800 4900
 Text Notes 3500 6050 0    50   ~ 0
 Vf = 2.0V\nIf = Max 25mA\nVbb = 3V3\nNominal Current = 10mA
+$Comp
+L FieldDevice_R2:Q_DUAL_PMOS_TSM9933DCS Q?
+U 1 1 5D6B0A26
+P 2500 4600
+F 0 "Q?" H 2788 4575 50  0000 L CNN
+F 1 "Q_DUAL_PMOS_TSM9933DCS" H 2788 4530 50  0001 L CNN
+F 2 "" H 2550 4600 50  0001 C CNN
+F 3 "https://cdn-reichelt.de/documents/datenblatt/A200/TSM9933DCS.pdf" H 2550 4600 50  0001 C CNN
+F 4 "TSM9933DCS" H 2500 4600 50  0001 C CNN "MPN"
+F 5 "https://www.reichelt.de/mosfet-2xp-ch-20v-4-7a-0-06r-so8-tsm9933dcs-p254993.html?&trstct=pol_0" H 2500 4600 50  0001 C CNN "Link"
+	1    2500 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L FieldDevice_R2:Q_DUAL_PMOS_TSM9933DCS Q?
+U 2 1 5D6B2369
+P 3700 4600
+F 0 "Q?" H 3988 4575 50  0000 L CNN
+F 1 "Q_DUAL_PMOS_TSM9933DCS" H 3988 4530 50  0001 L CNN
+F 2 "" H 3750 4600 50  0001 C CNN
+F 3 "https://cdn-reichelt.de/documents/datenblatt/A200/TSM9933DCS.pdf" H 3750 4600 50  0001 C CNN
+F 4 "TSM9933DCS" H 3700 4600 50  0001 C CNN "MPN"
+F 5 "https://www.reichelt.de/mosfet-2xp-ch-20v-4-7a-0-06r-so8-tsm9933dcs-p254993.html?&trstct=pol_0" H 3700 4600 50  0001 C CNN "Link"
+	2    3700 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 4600 3500 4600
+Wire Wire Line
+	2600 4150 2600 4400
+Wire Wire Line
+	3800 4150 3800 4400
+Wire Wire Line
+	2600 4900 2700 4900
+Wire Wire Line
+	2700 4900 2700 4850
+Connection ~ 2600 4900
+Wire Wire Line
+	2600 4900 2600 4950
+Wire Wire Line
+	3800 4900 3900 4900
+Wire Wire Line
+	3900 4900 3900 4850
+Connection ~ 3800 4900
+Wire Wire Line
+	3800 4900 3800 4950
 $EndSCHEMATC

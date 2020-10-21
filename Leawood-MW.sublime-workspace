@@ -4,12 +4,44 @@
 		"selected_items":
 		[
 			[
-				"text",
-				"text-center"
+				"curr",
+				"current_tab"
+			],
+			[
+				"assert",
+				"assertTemplateUsed"
+			],
+			[
+				"mock",
+				"mock_render"
+			],
+			[
+				"ass",
+				"assertContains"
+			],
+			[
+				"name",
+				"name_generator"
+			],
+			[
+				"create",
+				"create_user"
+			],
+			[
+				"cont",
+				"context_dict"
+			],
+			[
+				"conte",
+				"context_dict"
 			],
 			[
 				"con",
-				"container"
+				"context_dict"
+			],
+			[
+				"text",
+				"text-center"
 			],
 			[
 				"on",
@@ -18,10 +50,6 @@
 			[
 				"share",
 				"share_list"
-			],
-			[
-				"assert",
-				"assertIn"
 			],
 			[
 				"f",
@@ -58,10 +86,6 @@
 			[
 				"mo",
 				"mock_form"
-			],
-			[
-				"mock",
-				"mockNewListForm"
 			],
 			[
 				"mock_",
@@ -124,10 +148,6 @@
 				"manage_dot_py"
 			],
 			[
-				"create",
-				"create_pre_authenticated_session"
-			],
-			[
 				"session",
 				"session_key"
 			],
@@ -146,10 +166,6 @@
 			[
 				"log",
 				"login"
-			],
-			[
-				"ass",
-				"assertIsNone"
 			],
 			[
 				"message",
@@ -303,36 +319,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/D/pcbs/Leawood/Leawood-MW/Leawood/urls.py",
-			"settings":
-			{
-				"buffer_size": 919,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "from django.test import LiveServerTestCase\nfrom selenium import webdriver\nfrom selenium.webdriver.common.keys import Keys\nimport unittest\nimport time\n\nclass newVisitorTest(LiveServerTestCase):\n\n\tdef setUp(self):\n\t\tself.browser = webdriver.Firefox()\n\n\tdef tearDown(self):\n\t\tself.browser.quit()\n\n\n\n\tdef test_can_see_the_dashboard(self):\n\t\t# Graeme comes to the PC and opens the Leawood App by going to \n\t\t# http://host/leawood\n\n\t\tself.browser.get(self.live_server_url)\n\t\tassert 'Leawood' in self.browser.title\n\n\t\t# He sees the main menu bar. Since he is not signed in, there is only\n\t\t# the dashboard tab and an option to sign in at the top.\n\t\t# TODO\n\t\tsignin_link = self.browser.find_element_by_link_text('Sign in')\n\t\tself.assertTrue(signin_link)\n\t\tself.assertEqual('Sign in', signin_link.text)\n\n\t\t# He tries to sign in\n\t\tsignin_link.click()\n\t\t# and sees that a Model dialog appears and requests a user name\n\t\t# and password\n\t\tlogin_dialog = self.browser.find_element_by_id('id_loginModal')\n\t\tself.assertEqual('false', login_dialog.get_attribute('aria-hidden'))\n\t\t\n\n\n\t\t# He also sees only the Dashboard that is in a view only mode.\n\t\theader_text = self.browser.find_element_by_tag_name('h1').text\n\t\tself.assertIn('Dashboard', header_text)\n\n\t\t# The dashboard shows a graph for some of the devices.\n\t\t# TODO\n\n\t\t# There is a search area where the devices can be searched for and\n\t\t# the dashboard filtered for those/that specific device(s).\n\t\tsearchbox = self.browser.find_element_by_id('id_search_filter')\n\t\tself.assertEqual(searchbox.get_attribute('placeholder'), 'device filter')\n\n\t\t# He wants to see only the Solar charges\n\t\t# Graeme enters \"solar\" into the search box\n\t\tsearchbox.send_keys('solar')\n\n\t\t# When he hits ENTER, the list is reduced only devices with \"solar\"\n\t\t# in their name\n\t\tsearchbox.send_keys(Keys.ENTER)\n\t\ttime.sleep(1)\n\n\t\tdevice_table = self.browser.find_element_by_id('id_device_table')\n\t\trows = device_table.find_elements_by_tag_name('tr')\n\t\tself.assertTrue(\n\t\t\tall('solar' in row.text.lower() for row in rows)\n\t\t)\n\n\n\n\t\t# Graeme signs on and sees that the menu has expanded to be able \n\t\t# to manage the devices\n\n\t\t# First, he has to sign in. He clicks on the sign in link and\n\t\t# a Modal dialog appears asking for his credentials.\n\t\tsignin_link.click()\n\t\ttime.sleep(1)\n\t\tuser_name = self.browser.find_element_by_id('id_user_name')\n\t\tself.assertEqual(user_name.get_attribute('placeholder'), 'Enter your user ID')\n\n\n\n\t\tuser_name.send_keys('graeme')\n\t\tpassword = self.browser.find_element_by_id('id_password')\n\t\tself.assertEqual(password.get_attribute('placeholder'), 'Enter your password')\n\t\tpassword.send_keys('welcome1')\n\t\tpassword.send_keys(Keys.ENTER)\n\t\tself.assertIn('Sign on successful', self.browser.find_element_by_id('id_messages').text)\n\n\t\t# He goes to the Devices tab.\n\n\t\t# There is sees the list of registered devices.\n\n\t\t# On each device entry, it also shows its last message and when\n\t\t# it was sent.\n\n\t\t# There is also a search are where he can filter the device or \n\t\t# devices shown.\n\n\t\tself.fail('Finish the test')\n\n\t\t## ================================================================ ##\n\t\t#\n\t\t# Devices\n\t\t#\tThe registration and listing of the devices\n\t\t# Locations\n\t\t#\tThe list of location where the devices can be deployed.\n\t\t# Logs\n\t\t#\tThe data the comes from the devices - timesptamped\n\t\t# Units\n\t\t#\tThe units of data that is published by the devices\n\t\t#\n\t\t## ================================================================ ##\n\n",
-			"file": "/D/pcbs/Leawood/Leawood-MW/functional_tests/tests.py",
-			"file_size": 3574,
-			"file_write_time": 131950467264491875,
-			"settings":
-			{
-				"buffer_size": 3473,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/pcbs/Leawood/Leawood-MW/dashboard/templates/dashboard/dashboard.html",
-			"settings":
-			{
-				"buffer_size": 4275,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -342,7 +328,7 @@
 	"command_palette":
 	{
 		"height": 170.0,
-		"last_filter": "text",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -374,16 +360,62 @@
 	},
 	"expanded_folders":
 	[
-		"/D/pcbs/Leawood/Leawood-MW",
-		"/D/pcbs/Leawood/Leawood-MW/dashboard",
-		"/D/pcbs/Leawood/Leawood-MW/dashboard/templates",
-		"/D/pcbs/Leawood/Leawood-MW/dashboard/templates/dashboard",
-		"/D/pcbs/Leawood/Leawood-MW/functional_tests",
-		"/D/pcbs/Leawood/Leawood-MW/Leawood"
 	],
 	"file_history":
 	[
+		"/D/pcbs/Leawood/Leawood-MW/devices/views.py",
+		"/D/pcbs/Leawood/Leawood-MW/dashboard/templates/pagination.html",
+		"/D/pcbs/Leawood/Leawood-MW/devices/templates/devices/devices.html",
+		"/D/pcbs/GoldCap/XBee/Experiment_2_Rcv_Session.log",
+		"/D/pcbs/GoldCap/XBee/Experiment_5_Rcv_Session_a.log",
+		"/D/pcbs/GoldCap/XBee/Experiment_6_Session_a.log",
+		"/D/pcbs/GoldCap/XBee/Experiment_7_Session_a.log",
+		"/D/pcbs/GoldCap/XBee/Experiment_10_Session_a.log",
+		"/D/pcbs/GoldCap/XBee/Experiment_14_Session.log",
+		"/D/pcbs/GoldCap/XBee/Experiment_10_Session.yaml",
+		"/D/pcbs/GoldCap/XBee/Experiment_18_Session.log",
+		"/D/pcbs/GoldCap/XBee/Experiment_20_Session.xml",
+		"/D/pcbs/GoldCap/XBee/Experiment_19_Session.xml",
+		"/D/pcbs/GoldCap/XBee/Experiment_19b_Session.xml",
+		"/D/pcbs/GoldCap/XBee/Experiment_19_Session.log",
+		"/D/pcbs/GoldCap/XBee/Experiment_2_Rcv_Session_b.log",
+		"/D/pcbs/Leawood/Leawood-MW/devices/tests/test_views.py",
+		"/D/pcbs/Leawood/Leawood-MW/dashboard/tests/common.py",
+		"/D/pcbs/Leawood/Leawood-Django/Leawood/device/__init__.py",
+		"/D/pcbs/GoldCap/doc/ATmega4809_Xplained_Pro_release_rev8.stp",
+		"/D/pcbs/GoldCap/doc/ATmega4809_Xplained_Pro_bradboard.FCStd",
+		"/D/pcbs/Leawood/Leawood-MW/Leawood/settings.py",
+		"/D/pcbs/Leawood/Leawood-MW/dashboard/templates/searchpanel.html",
+		"/D/pcbs/Leawood/Leawood-MW/virtualenv/Lib/site-packages/django/template/library.py",
+		"/D/pcbs/Leawood/Leawood-MW/devices/templatetags/common.py",
+		"/D/pcbs/Leawood/Leawood-MW/devices/templatetags/__init__.py",
+		"/D/pcbs/Leawood/Leawood-MW/virtualenv/Lib/site-packages/django/test/client.py",
+		"/D/pcbs/Leawood/Leawood-MW/virtualenv/Lib/site-packages/django/core/handlers/base.py",
+		"/D/pcbs/Leawood/Leawood-Django/Leawood/device/views.py",
+		"/D/pcbs/Leawood/Leawood-MW/devices/templates/devices/pending.html",
+		"/D/pcbs/Leawood/Leawood-MW/devices/templates/devices/active.html",
+		"/D/pcbs/Leawood/Leawood-Django/Leawood/device/templates/device/device_scan.htm",
+		"/D/pcbs/Leawood/Leawood-MW/functional_tests/test_devices.py",
+		"/D/pcbs/Leawood/Leawood-MW/functional_tests/base.py",
+		"/D/pcbs/Leawood/Leawood-MW/accounts/views.py",
+		"/D/pcbs/Leawood/Leawood-MW/dashboard/templates/dashboard/dashboard.html",
+		"/D/pcbs/Leawood/Leawood-Django/Leawood/device/templates/device/list.htm",
+		"/D/pcbs/Leawood/Leawood-MW/devices/tests/test_models.py",
+		"/D/python/python-tdd-book/lists/tests/test_views.py",
+		"/D/pcbs/Leawood/Leawood-MW/functional_tests/tests.py",
+		"/D/pcbs/Leawood/Leawood-MW/devices/models.py",
+		"/D/pcbs/Leawood/Leawood-MW/devices/urls.py",
+		"/D/pcbs/Leawood/Leawood-Django/Leawood/device/templates/device/device.htm",
+		"/D/python/python-tdd-book/functional_tests/base.py",
+		"/D/python/python-tdd-book/functional_tests/management/commands/create_session.py",
+		"/D/python/python-tdd-book/functional_tests/server_tools.py",
 		"/D/python/python-tdd-book/functional_tests/test_my_lists.py",
+		"/D/pcbs/Leawood/Leawood-MW/devices/templates/devices/searchpanel.html",
+		"/D/pcbs/Leawood/Leawood-MW/dashboard/templates/base.html",
+		"/D/pcbs/Leawood/Leawood-Django/Leawood/device/templates/device/active.html",
+		"/D/pcbs/Leawood/Leawood-Django/Leawood/device/templates/device/detail.htm",
+		"/D/pcbs/Leawood/Leawood-MW/README.md",
+		"/D/pcbs/Leawood/Leawood-MW/Leawood/urls.py",
 		"/D/python/python-tdd-book/functional_tests/test_sharing.py",
 		"/D/python/python-tdd-book/functional_tests/my_lists_page.py",
 		"/D/python/python-tdd-book/functional_tests/list_page.py",
@@ -394,11 +426,9 @@
 		"/D/python/python-tdd-book/lists/models.py",
 		"/D/python/python-tdd-book/lists/templates/my_lists.html",
 		"/D/python/python-tdd-book/lists/views.py",
-		"/D/python/python-tdd-book/lists/tests/test_views.py",
 		"/D/python/python-tdd-book/functional_tests/test_layout_and_styling.py",
 		"/D/python/python-tdd-book/functional_tests/test_list_item_validation.py",
 		"/D/python/python-tdd-book/lists/urls.py",
-		"/D/python/python-tdd-book/functional_tests/base.py",
 		"/D/python/python-tdd-book/lists/tests/test_forms.py",
 		"/D/python/python-tdd-book/.gitignore",
 		"/D/python/python-tdd-book/lists/forms.py",
@@ -406,9 +436,7 @@
 		"/D/python/python-tdd-book/virtualenv/Lib/site-packages/django/forms/formsets.py",
 		"/D/python/python-tdd-book/accounts/authentication.py",
 		"/D/python/python-tdd-book/functional_tests/test_login.py",
-		"/D/python/python-tdd-book/functional_tests/management/commands/create_session.py",
 		"/D/python/python-tdd-book/superlists/settings.py",
-		"/D/python/python-tdd-book/functional_tests/server_tools.py",
 		"/D/python/python-tdd-book/deploy_tools/fabfile.py",
 		"/D/python/python-tdd-book/accounts/views.py",
 		"/D/python/python-tdd-book/accounts/tests/test_views.py",
@@ -462,16 +490,11 @@
 		"/D/pcbs/AdventSternla/pcb/FiveChannel/FiveChannel.sch",
 		"/D/pcbs/Leawood/FieldDevice/kicad/lib/fieldDevice_symbols.lib",
 		"/D/Dropbox/CE/DOGS/DOGS104_SSD1803A_SPI/DOGS104_SSD1803A_SPI/SSD1803A/src/lcd_spi.c",
-		"/D/ElectronicAssembly/ApplicationNotes/DOGS104_SSD1803A_SPI/DOGS104_SSD1803A_SPI/SSD1803A/src/main.c",
-		"/D/ElectronicAssembly/ApplicationNotes/DOGS104_SSD1803A_SPI/DOGS104_SSD1803A_SPI/SSD1803A/src/lcd_spi.c",
-		"/D/Dropbox/CE/DOGS/DOGS104_SSD1803A_SPI/DOGS104_SSD1803A_SPI/SSD1803A/src/main.c",
-		"/D/pcbs/DisplayAdapter_DOGS104/firmware/arduino/DisplayTest/lcd_spi",
-		"/D/Dropbox/CE/DOGS/DOGS104_SSD1803A_SPI/DOGS104_SSD1803A_SPI/SSD1803A/src/lcd_spi.h",
-		"/D/pcbs/DisplayAdapter_DOGS104/firmware/arduino/DisplayTest/lcd_spi.cpp"
+		"/D/ElectronicAssembly/ApplicationNotes/DOGS104_SSD1803A_SPI/DOGS104_SSD1803A_SPI/SSD1803A/src/main.c"
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -485,6 +508,39 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"curve",
+			"topo",
+			"Topo Shape",
+			"TopoShape",
+			"page_request_var",
+			"current_tab",
+			"tab_request_var",
+			"SimpleNode",
+			"simple_tag",
+			"define",
+			"register",
+			"t=",
+			"active item ",
+			"html",
+			"/html",
+			"Active item 1",
+			")",
+			"assertTemplateUsed",
+			"assertTemplate",
+			"Template",
+			"[]",
+			"current_tab",
+			"mock",
+			"query",
+			"queryset_r",
+			"queryset_l",
+			"Field_Device",
+			"register",
+			"object_register",
+			"settings",
+			"new_list",
+			"create_session_on_server",
+			"create_pre",
 			"button",
 			"loginModal"
 		],
@@ -494,112 +550,28 @@
 		"regex": false,
 		"replace_history":
 		[
+			"pending_qs",
+			"active_qs",
+			"Device",
+			"query_objects"
 		],
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/D/pcbs/Leawood/Leawood-MW/Leawood/urls.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 919,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								839,
-								839
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/pcbs/Leawood/Leawood-MW/functional_tests/tests.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3473,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1541,
-								1544
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 505.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/D/pcbs/Leawood/Leawood-MW/dashboard/templates/dashboard/dashboard.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4275,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2586,
-								2597
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1201.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -636,7 +608,7 @@
 	"project": "Leawood-MW.sublime-project",
 	"replace":
 	{
-		"height": 52.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -675,10 +647,10 @@
 	{
 	},
 	"show_minimap": true,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 250.0,
+	"side_bar_width": 276.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
